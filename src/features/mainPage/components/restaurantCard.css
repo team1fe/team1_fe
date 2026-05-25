@@ -1,0 +1,85 @@
+.restaurant-card {
+  width: 360px;
+  height: 91px;
+
+  border-radius: 14px;
+
+  background: #fff;
+
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  align-items: center;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+}
+
+.restaurant-image {
+  width: 67px;
+  height: 67px;
+
+  border-radius: 12px;
+
+  background-color: #d9d9d9;
+
+  margin-right: 14px;
+
+  flex-shrink: 0;
+}
+
+.restaurant-info {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 6px;
+}
+
+.top-row {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.restaurant-name {
+  color: #000;
+
+  font-family: Pretendard;
+
+  font-size: 20px;
+
+  font-style: normal;
+  font-weight: 600;
+
+  line-height: 24px;
+}
+
+.restaurant-category {
+  color: #000;
+
+  font-family: Pretendard;
+
+  font-size: 13px;
+
+  font-style: normal;
+  font-weight: 400;
+
+  line-height: 24px;
+}
+
+.restaurant-address {
+  color: #000;
+
+  font-family: Pretendard;
+
+  font-size: 16px;
+
+  font-style: normal;
+  font-weight: 400;
+
+  line-height: 24px;
+}
