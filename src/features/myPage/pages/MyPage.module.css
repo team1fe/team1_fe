@@ -1,0 +1,136 @@
+.screen {
+  width: 390px;
+  height: 844px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  margin: 40px auto;
+}
+
+.content {
+  height: calc(100% - 60px - 86px);
+  padding: 18px;
+  overflow-y: auto;
+}
+
+.profile {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.profile h1 {
+  margin: 0 0 14px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.profile h1 span {
+  color: #6e232f;
+}
+
+.profile p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.profile small {
+  font-size: 13px;
+  color: #333333;
+  font-weight: 400;
+}
+
+.partnership {
+  margin-top: 26px;
+}
+
+.partnership h2 {
+  margin: 0 0 20px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  width: 100%;
+  height: 127px;
+  border: none;
+  border-radius: 14px;
+  background-color: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.cardContent {
+  position: relative;
+  width: 78px;
+  height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wingIcon1 {
+  width: 78px;
+  height: 77px;
+  object-fit: contain;
+  position: absolute;
+}
+
+.wingIcon2 {
+  width: 67px;
+  height: 67px;
+  object-fit: contain;
+  position: absolute;
+  left: 20px;
+  top: 13px;
+}
+
+.qrCardContent {
+  position: relative;
+  width: 77px;
+  height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qrCircle {
+  width: 77px;
+  height: 77px;
+  border-radius: 50%;
+  background-color: #6e232f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.cardTitle {
+  color: #000;
+font-feature-settings: 'liga' off, 'clig' off;
+
+
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 16px; 
+text-transform: uppercase;
+}
