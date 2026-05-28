@@ -21,7 +21,7 @@ const restaurants = [
   },
 ];
 
-function UnderBar({ expanded, setExpanded }) {
+function UnderBar({ expanded, setExpanded, onSelectRestaurant }) {
   const [showFilter, setShowFilter] = useState(false);
 
   const [selectedFilter, setSelectedFilter] = useState("필터");
@@ -151,6 +151,7 @@ function UnderBar({ expanded, setExpanded }) {
               name={restaurant.name}
               category={restaurant.category}
               address={restaurant.address}
+              onClick={() => onSelectRestaurant(restaurant)}
             />
           ))
         ) : (
