@@ -1,6 +1,12 @@
 export const ROUTES = Object.freeze({
-  HOME: "/home",
+  LOGIN: "/login",
 
+  SIGNUP_EMAIL: "/signup/email",
+  SIGNUP_PASSWORD: "/signup/password",
+  SIGNUP_NICKNAME: "/signup/nickname",
+  SIGNUP_SUCCESS: "/signup/success",
+
+  HOME: "/home",
   MYPAGE: "/mypage",
 
   SIGNUP_EMAIL: "/signup/email",

@@ -66,8 +66,8 @@
 
   transform: translateX(-50%);
 
-  width: 68px;
-  height: 68px;
+  width: 84px;
+  height: 84px;
 
   border-radius: 50%;
 
@@ -85,6 +85,6 @@
 }
 
 .qr-icon {
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
 }

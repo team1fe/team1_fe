@@ -1,0 +1,162 @@
+.restaurant-detail-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+
+  overflow: hidden;
+}
+
+.restaurant-detail-content {
+  position: relative;
+
+  height: 100vh;
+
+  padding-top: 151px;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 120px;
+
+  box-sizing: border-box;
+
+  overflow-y: auto;
+}
+
+.restaurant-detail-content::-webkit-scrollbar {
+  display: none;
+}
+
+.restaurant-detail-content {
+  scrollbar-width: none;
+}
+
+.detail-back-button {
+  position: absolute;
+  top: 118.67px;
+  left: 15px;
+
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.detail-back-button img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.detail-favorite-button {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 149px;
+  right: 32px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.detail-favorite-button img {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+.detail-title-section {
+  margin-top: 0;
+}
+
+.detail-title {
+  margin: 0 0 3px 0;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 39px;
+}
+
+.detail-address {
+  margin: 0;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.detail-divider {
+  width: 338px;
+  height: 1px;
+  opacity: 0.06;
+  background: #000;
+  margin-top: 19px;
+  margin-bottom: 11px;
+}
+
+.detail-benefit-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-section-title {
+  margin: 0 0 14px 0;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  margin-top: 20px;
+}
+
+.benefit-section-title {
+  margin: 0;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.detail-benefit-text {
+  margin: 0;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.detail-character {
+  width: 130px;
+  height: 130px;
+  margin-top: 42px;
+  flex-shrink: 0;
+}
+
+.detail-menu-section {
+  margin-top: 19px;
+}
+
+.detail-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.detail-menu-image {
+  width: 144px;
+  height: 153px;
+  border-radius: 9px;
+  object-fit: cover;
+}

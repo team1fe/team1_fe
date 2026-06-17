@@ -1,8 +1,8 @@
 import "./restaurantCard.css";
 
-function RestaurantCard({ name, category, address }) {
+function RestaurantCard({ name, category, address, onClick }) {
   return (
-    <div className="restaurant-card">
+    <button className="restaurant-card" onClick={onClick}>
       <div className="restaurant-image"></div>
 
       <div className="restaurant-info">
@@ -13,7 +13,7 @@ function RestaurantCard({ name, category, address }) {
 
         <div className="restaurant-address">{address}</div>
       </div>
-    </div>
+    </button>
   );
 }
 
