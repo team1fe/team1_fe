@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "../features/mainPage/pages/HomePage";
 import RestaurantDetailPage from "../features/mainPage/pages/RestaurantDetailPage";
 import LoginPage from "../features/loginPage/pages/LoginPage/LoginPage";
+import MyPage from "../features/myPage/pages/MyPage";
 
 import EmailCheckPage from "../features/loginPage/pages/signupPage/EmailCheckPage/EmailCheckPage";
 
@@ -11,7 +12,6 @@ import PasswordSettingPage from "../features/loginPage/pages/signupPage/Password
 import NicknameSettingPage from "../features/loginPage/pages/signupPage/NicknameSettingPage/NicknameSettingPage";
 
 import SignupSuccessPage from "../features/loginPage/pages/signupPage/SignupSuccessPage/SignupSuccessPage";
-import MyPage from "../features/myPage/pages/MyPage";
 
 import { ROUTES } from "./routes.constant";
 
