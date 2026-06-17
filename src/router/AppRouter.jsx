@@ -20,7 +20,6 @@ function AppRouter() {
     <Routes>
       <Route path="/" element={<Navigate to={ROUTES.LOGIN} replace />} />{" "}
       <Route path={ROUTES.HOME} element={<HomePage />} />
-      <Route path={ROUTES.HOME} element={<HomePage />} />
       <Route path={ROUTES.MYPAGE} element={<MyPage />} />
       <Route
         path={ROUTES.RESTAURANT_DETAIL()}
