@@ -1,0 +1,26 @@
+.my-back-button {
+  position: absolute;
+
+  top: 122px;
+  right: 14px;
+
+  width: 28px;
+  height: 28px;
+
+  border: none;
+  background-color: transparent;
+
+  padding: 0;
+  margin: 0;
+
+  cursor: pointer;
+
+  z-index: 3000;
+}
+
+.my-back-button img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}

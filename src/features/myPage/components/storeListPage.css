@@ -1,0 +1,36 @@
+.my-store-list-page {
+  position: absolute;
+
+  top: 107px;
+  left: 0;
+  right: 0;
+  bottom: 73px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+
+  width: 100%;
+
+  padding: 18px 18px 16px;
+
+  background-color: #ffffff;
+
+  overflow-y: auto;
+}
+
+
+.my-store-list-title {
+  margin: 0 0 14px;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 16px;
+
+  color: #111111;
+}
+
+.my-store-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
