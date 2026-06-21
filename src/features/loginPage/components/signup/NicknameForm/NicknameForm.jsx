@@ -2,10 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import error from "../../../../../assets/error.svg";
-
-import Input from "../../common/Input/Input";
-import Button from "../../common/Button/Button";
-
 import { ROUTES } from "../../../../../router/routes.constant";
 
 import "./NicknameForm.css";
@@ -27,24 +23,59 @@ function NicknameForm() {
 
   return (
     <div className="nickname-form">
-      <Input
-        type="text"
-        placeholder="닉네임을 입력해주세요."
-        value={nickname}
-        onChange={(e) => {
-          setNickname(e.target.value);
-          setIsError(false);
-        }}
-      />
+      <button
+        type="button"
+        className="back-button"
+        onClick={() => navigate(-1)}
+      >
+        ‹
+      </button>
+
+      <h1 className="nickname-title">
+        닉네임을 설정해주세요.
+      </h1>
+
+      <p className="nickname-desc">
+        설정하신 이름으로 불러드릴게요.
+      </p>
+
+      <p className="nickname-sub-desc">
+        유해한 이름은 통보 없이 제재당할 수 있어요.
+      </p>
+
+      <div className="nickname-input-box">
+        <input
+          type="text"
+          placeholder="예) 김광운"
+          value={nickname}
+          onChange={(e) => {
+            setNickname(e.target.value);
+            setIsError(false);
+          }}
+        />
+
+        {isError && (
+          <img
+            src={error}
+            alt="에러"
+            className="nickname-error-icon"
+          />
+        )}
+      </div>
 
       {isError && (
-        <div className="error-box">
-          <img src={error} alt="에러" />
-          <span>닉네임은 2자 이상 입력해주세요.</span>
-        </div>
+        <p className="nickname-error-message">
+          닉네임은 2자 이상 입력해주세요.
+        </p>
       )}
 
-      <Button text="완료" onClick={handleSubmit} />
+      <button
+        type="button"
+        className="next-button"
+        onClick={handleSubmit}
+      >
+        다음
+      </button>
     </div>
   );
 }

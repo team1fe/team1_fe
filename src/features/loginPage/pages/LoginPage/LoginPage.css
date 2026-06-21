@@ -16,16 +16,20 @@
   flex-direction: column;
   align-items: center;
 
-  margin-bottom: 80px;
+  margin-bottom: 79px;
 }
 
 .logo-image {
   width: 180px;
 
-  margin-bottom: 20px;
 }
 
 .logo-text {
-  font-size: 14px;
-  color: #6e232f;
+  margin:0;
+  color: #6E232F;
+  font-family: Pretendard;
+  font-size: 14.786px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }

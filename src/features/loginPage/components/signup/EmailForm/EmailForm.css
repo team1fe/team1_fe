@@ -1,21 +1,139 @@
-.email-form,
-.password-form,
-.nickname-form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+.email-form {
+  width: 100%;
+  min-height: 100vh;
+  padding: 54px 20px 0;
+  box-sizing: border-box;
+  background: #fff;
+  text-align: left;
 }
 
-.error-box {
+.back-button {
+  display: block;
+  width: fit-content;
+
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0 0 26px;
+
+  font-size: 34px;
+  line-height: 1;
+  color: #666;
+}
+
+.email-title {
+  margin: 0 0 6px;
+
+  color: #000;
+  font-family: Pretendard, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.email-desc {
+  margin: 0 0 4px;
+
+  color: #000;
+  font-family: Pretendard, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.email-sub-desc {
+  margin: 0 0 14px;
+
+  color: #777;
+  font-family: Pretendard, sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+}
+
+.email-input-box {
+  position: relative;
+
   display: flex;
   align-items: center;
   gap: 8px;
 
-  color: #c62828;
-  font-size: 13px;
+  width: 100%;
+  height: 44px;
+
+  border: 1px solid #6e232f;
+  border-radius: 14px;
+
+  padding: 0 7px 0 12px;
+  box-sizing: border-box;
+
+  margin-bottom: 6px;
 }
 
-.error-box img {
+.code-input-box {
+  margin-bottom: 4px;
+}
+
+.email-input-box input {
+  flex: 1;
+  min-width: 0;
+
+  border: none;
+  outline: none;
+  background: transparent;
+
+  color: #000;
+  font-family: Pretendard, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.email-input-box input::placeholder {
+  color: #cfcfcf;
+}
+
+.verify-button {
+  width: 39px;
+  height: 30px;
+
+  border: none;
+  border-radius: 10px;
+  background: #6e232f;
+
+  color: #fff;
+  font-family: Pretendard, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.input-error-icon {
   width: 16px;
   height: 16px;
+}
+
+.code-error-message {
+  margin: 0 0 12px;
+
+  color: #6e232f;
+  font-family: Pretendard, sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+}
+
+.next-button {
+  width: 100%;
+  height: 44px;
+
+  margin-top: 14px;
+
+  border: none;
+  border-radius: 14px;
+  background: #6e232f;
+
+  color: #fff;
+  font-family: Pretendard, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.next-button:disabled {
+  background: #ddd;
 }

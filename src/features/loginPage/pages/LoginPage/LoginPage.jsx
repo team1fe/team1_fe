@@ -9,7 +9,7 @@ function LoginPage() {
     <div className="login-page">
       <div className="logo-box">
         <img src={logo} alt="로고" className="logo-image" />
-        <p className="logo-text">광운대학교 학생 제휴 커넥티브 맵</p>
+        <p className="logo-text">광운대학교 학생 제휴 커넥트 맵</p>
       </div>
 
       <Login />

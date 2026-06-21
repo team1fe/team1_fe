@@ -1,21 +1,95 @@
-.email-form,
-.password-form,
 .nickname-form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  width: 100%;
+  min-height: 100vh;
+  padding: 54px 20px 0;
+  box-sizing: border-box;
+  background: #fff;
 }
 
-.error-box {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.back-button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0 0 34px;
 
-  color: #c62828;
+  font-size: 34px;
+  line-height: 1;
+  color: #666;
+}
+
+.nickname-title {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.nickname-desc {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.nickname-sub-desc {
+  margin: 0 0 14px;
+  font-size: 9px;
+  color: #777;
+}
+
+.nickname-input-box {
+  position: relative;
+
+  width: 100%;
+  height: 44px;
+
+  border: 1px solid #6e232f;
+  border-radius: 14px;
+
+  padding: 0 14px;
+  box-sizing: border-box;
+  margin-bottom: 94px;
+}
+
+.nickname-input-box input {
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  outline: none;
+  background: transparent;
+
   font-size: 13px;
 }
 
-.error-box img {
+.nickname-input-box input::placeholder {
+  color: #cfcfcf;
+}
+
+.nickname-error-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+
   width: 16px;
   height: 16px;
+}
+
+.nickname-error-message {
+  margin: -86px 0 72px;
+
+  color: #6e232f;
+  font-size: 9px;
+}
+
+.next-button {
+  width: 100%;
+  height: 44px;
+
+  border: none;
+  border-radius: 14px;
+  background: #6e232f;
+
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
 }

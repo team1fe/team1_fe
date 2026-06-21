@@ -34,8 +34,10 @@ function Login() {
     <div className="login-form">
       <Input
         type="email"
+        label="광운대학교 웹메일 주소"
         placeholder="예) test@kw.ac.kr"
         value={email}
+        isError={isError}
         onChange={(e) => {
           setEmail(e.target.value);
           setIsError(false);
@@ -44,8 +46,10 @@ function Login() {
 
       <Input
         type="password"
-        placeholder="비밀번호"
+        label="비밀번호"
+        placeholder="비밀번호를 확인해주세요."
         value={password}
+        isError={isError}
         onChange={(e) => {
           setPassword(e.target.value);
           setIsError(false);
