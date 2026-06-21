@@ -5,12 +5,9 @@ import RestaurantDetailPage from "../features/mainPage/pages/RestaurantDetailPag
 import MyPage from "../features/myPage/pages/MyPage";
 import QRPage from "../features/qrPage/pages/QRPage";
 
-import MyPage from "../features/myPage/pages/MyPage";
 import College from "../features/myPage/pages/College";
 import Department from "../features/myPage/pages/Department";
 import Favorite from "../features/myPage/pages/Favorite";
-
-import RestaurantDetailPage from "../features/mainPage/pages/RestaurantDetailPage";
 
 import LoginPage from "../features/loginPage/pages/LoginPage/LoginPage";
 import EmailCheckPage from "../features/loginPage/pages/signupPage/EmailCheckPage/EmailCheckPage";
@@ -26,7 +23,10 @@ function AppRouter() {
       <Route path="/" element={<Navigate to={ROUTES.LOGIN} replace />} />
 
       <Route path={ROUTES.HOME} element={<HomePage />} />
-      <Route path={ROUTES.RESTAURANT_DETAIL()} element={<RestaurantDetailPage />} />
+      <Route
+        path={ROUTES.RESTAURANT_DETAIL()}
+        element={<RestaurantDetailPage />}
+      />
       <Route path={ROUTES.MYPAGE} element={<MyPage />} />
       <Route path="/qrpage" element={<QRPage />} />
       <Route path="/mypage" element={<MyPage />} />
