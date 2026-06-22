@@ -1,0 +1,14 @@
+.nickname-setting-page {
+  position: relative;
+
+  width: 393px;
+  height: 852px;
+
+  margin: 0 auto;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+  overflow: hidden;
+}

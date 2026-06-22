@@ -1,139 +1,235 @@
 .email-form {
-  width: 100%;
-  min-height: 100vh;
-  padding: 54px 20px 0;
+  position: relative;
+
+  width: 393px;
+  height: 852px;
+
   box-sizing: border-box;
-  background: #fff;
-  text-align: left;
 }
 
-.back-button {
-  display: block;
-  width: fit-content;
+/* 뒤로가기 화살표 */
+.email-back-button {
+  position: absolute;
+  top: 75px;
+  left: 13px;
 
-  border: none;
-  background: none;
+  width: 33px;
+  height: 33px;
+
   padding: 0;
-  margin: 0 0 26px;
+  border: none;
+  background-color: transparent;
 
-  font-size: 34px;
-  line-height: 1;
-  color: #666;
+  color: #000;
+  opacity: 0.52;
+
+  font-size: 33px;
+  font-weight: 300;
+  line-height: 33px;
+
+  cursor: pointer;
+}
+
+/* 제목 영역 */
+.email-title-area {
+  position: absolute;
+  top: 118px;
+  left: 24px;
+
+  width: 352px;
 }
 
 .email-title {
-  margin: 0 0 6px;
+  width: 352px;
+
+  margin: 0 0 8px 0;
 
   color: #000;
   font-family: Pretendard, sans-serif;
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1.3;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
-.email-desc {
-  margin: 0 0 4px;
+.email-subtitle {
+  width: 352px;
+
+  margin: 0 0 4px 0;
+
+  color: #000;
+  font-family: Pretendard, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.email-description {
+  width: 301px;
+
+  margin: 0;
 
   color: #000;
   font-family: Pretendard, sans-serif;
   font-size: 11px;
-  font-weight: 700;
-}
-
-.email-sub-desc {
-  margin: 0 0 14px;
-
-  color: #777;
-  font-family: Pretendard, sans-serif;
-  font-size: 9px;
+  font-style: normal;
   font-weight: 400;
+  line-height: normal;
 }
 
+/* 이메일 입력칸 */
 .email-input-box {
-  position: relative;
+  position: absolute;
+  top: 231px;
+  left: 21px;
 
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  width: 352px;
+  height: 64px;
 
-  width: 100%;
-  height: 44px;
-
-  border: 1px solid #6e232f;
-  border-radius: 14px;
-
-  padding: 0 7px 0 12px;
   box-sizing: border-box;
 
-  margin-bottom: 6px;
+  border-radius: 22px;
+  border: 1px solid #6e232f;
+
+  background-color: #ffffff;
 }
 
-.code-input-box {
-  margin-bottom: 4px;
-}
+.email-input {
+  position: absolute;
+  top: 0;
+  left: 22px;
 
-.email-input-box input {
-  flex: 1;
-  min-width: 0;
+  width: 250px;
+  height: 62px;
+
+  padding: 0;
+  margin: 0;
 
   border: none;
   outline: none;
-  background: transparent;
+  background-color: transparent;
 
   color: #000;
   font-family: Pretendard, sans-serif;
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
 }
 
-.email-input-box input::placeholder {
-  color: #cfcfcf;
-}
+.email-input::placeholder {
+  color: #000;
+  opacity: 0.21;
 
-.verify-button {
-  width: 39px;
-  height: 30px;
-
-  border: none;
-  border-radius: 10px;
-  background: #6e232f;
-
-  color: #fff;
   font-family: Pretendard, sans-serif;
-  font-size: 11px;
-  font-weight: 700;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
 }
 
-.input-error-icon {
-  width: 16px;
-  height: 16px;
-}
+/* 인증 버튼 */
+.email-check-button {
+  position: absolute;
+  top: 15px;
+  right: 11px;
 
-.code-error-message {
-  margin: 0 0 12px;
+  width: 49px;
+  height: 33px;
 
-  color: #6e232f;
-  font-family: Pretendard, sans-serif;
-  font-size: 9px;
-  font-weight: 400;
-}
-
-.next-button {
-  width: 100%;
-  height: 44px;
-
-  margin-top: 14px;
-
+  padding: 0;
   border: none;
-  border-radius: 14px;
-  background: #6e232f;
+  border-radius: 11px;
 
-  color: #fff;
+  background-color: #6e232f;
+  color: #ffffff;
+
   font-family: Pretendard, sans-serif;
   font-size: 14px;
-  font-weight: 700;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  cursor: pointer;
 }
 
-.next-button:disabled {
-  background: #ddd;
+/* 인증번호 입력칸 */
+.email-code-box {
+  position: absolute;
+  top: 300px;
+  left: 21px;
+
+  width: 352px;
+  height: 64px;
+
+  box-sizing: border-box;
+
+  border-radius: 22px;
+  border: 1px solid #6e232f;
+
+  background-color: #ffffff;
+}
+
+.email-code-input {
+  position: absolute;
+  top: 0;
+  left: 22px;
+
+  width: 300px;
+  height: 62px;
+
+  padding: 0;
+  margin: 0;
+
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  color: #000;
+  font-family: Pretendard, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.email-code-input::placeholder {
+  color: #000;
+  opacity: 0.21;
+
+  font-family: Pretendard, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+/* 다음 버튼 */
+.email-next-button {
+  position: absolute;
+  top: 394px;
+  left: 21px;
+
+  width: 352px;
+  height: 64px;
+
+  padding: 0;
+  border: none;
+  border-radius: 22px;
+
+  background-color: #dddddd;
+  color: #ffffff;
+
+  font-family: Pretendard, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  cursor: pointer;
+}
+
+.email-next-button.active {
+  background-color: #6e232f;
 }

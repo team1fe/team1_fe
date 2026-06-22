@@ -1,95 +1,187 @@
 .nickname-form {
-  width: 100%;
-  min-height: 100vh;
-  padding: 54px 20px 0;
+  position: relative;
+
+  width: 393px;
+  height: 852px;
+
   box-sizing: border-box;
-  background: #fff;
 }
 
-.back-button {
-  border: none;
-  background: none;
-  padding: 0;
-  margin: 0 0 34px;
+/* 화살표 */
+.nickname-back-button {
+  position: absolute;
+  top: 75px;
+  left: 13px;
 
-  font-size: 34px;
-  line-height: 1;
-  color: #666;
+  width: 33px;
+  height: 33px;
+
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  color: #000;
+  opacity: 0.52;
+
+  font-size: 33px;
+  font-weight: 300;
+  line-height: 33px;
+
+  cursor: pointer;
+}
+
+/* 제목 + 설명 영역 */
+.nickname-title-area {
+  position: absolute;
+  top: 128px;
+  left: 21px;
+
+  width: 352.258px;
 }
 
 .nickname-title {
-  margin: 0 0 6px;
-  font-size: 22px;
-  font-weight: 800;
+  width: 352.258px;
+
+  margin: 0 0 4px 0;
+
+  color: #000;
+  font-family: Pretendard, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .nickname-desc {
-  margin: 0 0 4px;
-  font-size: 11px;
+  width: 352.258px;
+
+  margin: 0 0 4px 0;
+
+  color: #000;
+  font-family: Pretendard, sans-serif;
+  font-size: 16px;
+  font-style: normal;
   font-weight: 700;
+  line-height: normal;
 }
 
 .nickname-sub-desc {
-  margin: 0 0 14px;
-  font-size: 9px;
-  color: #777;
+  width: 274px;
+
+  margin: 0;
+
+  color: #000;
+  font-family: Pretendard, sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
+/* 입력 상자 */
+/* 설명 글씨 끝난 뒤 14px 간격 */
 .nickname-input-box {
-  position: relative;
+  position: absolute;
+  top: 232px;
+  left: 21px;
 
-  width: 100%;
-  height: 44px;
+  width: 352px;
+  height: 64px;
 
-  border: 1px solid #6e232f;
-  border-radius: 14px;
-
-  padding: 0 14px;
   box-sizing: border-box;
-  margin-bottom: 94px;
+
+  border-radius: 22px;
+  border: 1px solid #6e232f;
+
+  background-color: #ffffff;
 }
 
-.nickname-input-box input {
+.nickname-input {
   width: 100%;
   height: 100%;
 
+  padding: 0 56px 0 22px;
+  margin: 0;
+
+  box-sizing: border-box;
+
   border: none;
   outline: none;
-  background: transparent;
 
-  font-size: 13px;
+  background-color: transparent;
+
+  color: #000;
+  font-family: Pretendard, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
 }
 
-.nickname-input-box input::placeholder {
-  color: #cfcfcf;
+.nickname-input::placeholder {
+  color: #000;
+  opacity: 0.21;
+
+  font-family: Pretendard, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
 }
 
+/* 오류 아이콘 */
 .nickname-error-icon {
   position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 20px;
+  right: 11px;
 
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
+
+  aspect-ratio: 1 / 1;
 }
 
+/* 오류 문구 */
 .nickname-error-message {
-  margin: -86px 0 72px;
+  position: absolute;
+  top: 301px;
+  left: 21px;
+
+  width: 157px;
+
+  margin: 0;
 
   color: #6e232f;
-  font-size: 9px;
+  opacity: 0.62;
+
+  font-family: Pretendard, sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.next-button {
-  width: 100%;
-  height: 44px;
+/* 다음 버튼 */
+.nickname-next-button {
+  position: absolute;
+  top: 360px;
+  left: 21px;
 
+  width: 352px;
+  height: 64px;
+
+  padding: 0;
   border: none;
-  border-radius: 14px;
-  background: #6e232f;
+  border-radius: 22px;
 
-  color: white;
-  font-size: 14px;
+  background-color: #6e232f;
+  color: #ffffff;
+
+  font-family: Pretendard, sans-serif;
+  font-size: 20px;
+  font-style: normal;
   font-weight: 700;
+  line-height: normal;
+
+  cursor: pointer;
 }

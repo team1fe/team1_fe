@@ -1,0 +1,41 @@
+.splash-page {
+  display: flex;
+  width: 393px;
+  height: 852px;
+  padding: 344px 93px 393.411px 93px;
+  flex-direction: column;
+  align-items: center;
+
+  box-sizing: border-box;
+  background: #6e232f;
+}
+
+.splash-content {
+  width: 207px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.splash-title {
+  margin: 0;
+
+  color: #fff;
+  font-family: Pretendard, sans-serif;
+  font-size: 14.786px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  white-space: nowrap;
+}
+
+.splash-logo {
+  width: 207px;
+  height: 106.339px;
+  aspect-ratio: 146 / 75;
+
+  object-fit: contain;
+  display: block;
+}

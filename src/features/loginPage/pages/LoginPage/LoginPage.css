@@ -1,35 +1,51 @@
 .login-page {
+  position: relative;
+
   width: 393px;
   height: 852px;
 
   margin: 0 auto;
-
-  padding: 120px 24px;
+  padding: 0;
 
   box-sizing: border-box;
 
-  background-color: white;
+  background-color: #ffffff;
+  overflow: hidden;
 }
 
 .logo-box {
+  position: absolute;
+
+  top: 81px;
+  left: 0;
+
+  width: 393px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  margin-bottom: 79px;
 }
 
 .logo-image {
-  width: 180px;
+  width: 144px;
+  height: 73.975px;
 
+  aspect-ratio: 144 / 73.97;
+  object-fit: contain;
+
+  display: block;
 }
 
 .logo-text {
-  margin:0;
-  color: #6E232F;
-  font-family: Pretendard;
+  margin: 0;
+
+  color: #6e232f;
+  font-family: Pretendard, sans-serif;
   font-size: 14.786px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  text-align: center;
+  white-space: nowrap;
 }

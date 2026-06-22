@@ -18,6 +18,7 @@ function NicknameForm() {
       return;
     }
 
+    setIsError(false);
     navigate(ROUTES.SIGNUP_SUCCESS);
   };
 
@@ -25,26 +26,23 @@ function NicknameForm() {
     <div className="nickname-form">
       <button
         type="button"
-        className="back-button"
-        onClick={() => navigate(-1)}
+        className="nickname-back-button"
+        onClick={() => navigate(ROUTES.SIGNUP_PASSWORD)}
       >
         ‹
       </button>
 
-      <h1 className="nickname-title">
-        닉네임을 설정해주세요.
-      </h1>
-
-      <p className="nickname-desc">
-        설정하신 이름으로 불러드릴게요.
-      </p>
-
-      <p className="nickname-sub-desc">
-        유해한 이름은 통보 없이 제재당할 수 있어요.
-      </p>
+      <div className="nickname-title-area">
+        <h1 className="nickname-title">닉네임을 설정해주세요.</h1>
+        <p className="nickname-desc">설정하신 이름으로 불러드릴게요.</p>
+        <p className="nickname-sub-desc">
+          유해한 이름은 통보없이 제재당할 수 있어요.
+        </p>
+      </div>
 
       <div className="nickname-input-box">
         <input
+          className="nickname-input"
           type="text"
           placeholder="예) 김광운"
           value={nickname}
@@ -57,7 +55,7 @@ function NicknameForm() {
         {isError && (
           <img
             src={error}
-            alt="에러"
+            alt="닉네임 오류"
             className="nickname-error-icon"
           />
         )}
@@ -71,7 +69,7 @@ function NicknameForm() {
 
       <button
         type="button"
-        className="next-button"
+        className="nickname-next-button"
         onClick={handleSubmit}
       >
         다음

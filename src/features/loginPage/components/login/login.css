@@ -1,5 +1,145 @@
 .login-form {
+  position: absolute;
+
+  top: 221px;
+  left: 23px;
+
+  width: 350px;
+
   display: flex;
   flex-direction: column;
-  gap: 30px;
+}
+
+.login-input-box {
+  width: 350px;
+}
+
+.password-box {
+  margin-top: 20px;
+}
+
+.login-input-label {
+  display: block;
+
+  width: 157px;
+  margin-bottom: 8px;
+
+  color: #000;
+  font-family: Pretendard, sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.login-input-line {
+  position: relative;
+
+  width: 350px;
+  height: 24px;
+
+  border-bottom: 1px solid #6e232f;
+}
+
+.login-input-field {
+  display: block;
+
+  width: 320px;
+  height: 24px;
+
+  padding: 0;
+  margin: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #000;
+  font-family: Pretendard, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.login-input-field::placeholder {
+  color: rgba(0, 0, 0, 0.21);
+
+  font-family: Pretendard, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.login-input-error-icon {
+  position: absolute;
+
+  right: 0;
+  top: 50%;
+
+  width: 14px;
+  height: 14px;
+
+  transform: translateY(-50%);
+}
+
+.login-error-text {
+  margin: 8px 0 26px 0;
+
+  color: rgba(110, 35, 47, 0.6);
+  font-family: Pretendard, sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.login-button {
+  width: 352px;
+  height: 64px;
+
+  margin-top: 60px;
+
+  border: none;
+  border-radius: 22px;
+
+  background-color: #6e232f;
+  color: #ffffff;
+
+  text-align: center;
+  font-family: Pretendard, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  cursor: pointer;
+}
+
+.login-error-text + .login-button {
+  margin-top: 0;
+}
+
+.signup-button {
+  width: 352px;
+  height: 64px;
+
+  margin-top: 51px;
+
+  border: 1px solid #6e232f;
+  border-radius: 22px;
+
+  background-color: #ffffff;
+  color: #6e232f;
+
+  text-align: center;
+  font-family: Pretendard, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  cursor: pointer;
 }
