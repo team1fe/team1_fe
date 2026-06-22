@@ -1,9 +1,10 @@
 .screen {
-  width: 393px;
-  height: 702px;
+  width: 100%;
+  max-width: 393px;
+  min-height: 100vh;
   background-color: white;
   position: relative;
-  margin: 40px auto;
+  margin: 0px auto;
 }
 
 .content {
@@ -16,18 +17,14 @@
 
   width: 100%;
 
-  padding: 25px 23px 16px;
+  padding: 38px 23px 16px;
 
   background-color: #ffffff;
 
   overflow-y: auto;
 }
 
-.profile h1 {
-  margin: 0 0 11px;
-  font-size: 32px;
-  font-weight: 700;
-}
+
 
 .profileSection {
   width: 100%;
@@ -39,25 +36,13 @@
 }
 
 .profileSection h1 {
-  margin: 0 0 10px;
-  font-size: 20px;
-  font-weight: 500;
+  margin: 0 0 16px;
+  font-family: Pretendard;
+  font-size: 32px;
+  font-weight: 700;
   line-height: 24px;
 }
 
-.profile small {
-  font-size: 15px;
-  color: #000;
-  font-weight: 400;
-}
-
-.profile {
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1.25;
-
-  color: #111111;
-}
 
 .profileSection h1 span {
   color: #6e232f;
@@ -65,7 +50,7 @@
 
 .profileSection p {
   margin: 0;
-
+  font-family: Pretendard;
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
@@ -75,8 +60,8 @@
 
 .profileSection small {
   display: block;
-
-  margin-top: 13px;
+  font-family: Pretendard;
+  margin-top: 12px;
 
   font-size: 15px;
   font-weight: 400;
@@ -90,9 +75,9 @@
 }
 
 .partnershipSection h2 {
-  margin: 0 0 10px;
+  margin: 29px 0 19px;
 
-  font-size: 20px;
+  font-size: 32px;
   font-weight: 700;
   line-height: 16px;
 

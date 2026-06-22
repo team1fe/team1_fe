@@ -1,17 +1,14 @@
-.store-list-page {
+.store-list-page 
 .store-list-screen {
-  width: 393px;
-  height: 855px;
+  width: 100%;
+  max-width: 393px;
+  min-height: 100vh;
   background-color: #ffffff;
   position: relative;
   margin: 0 auto;
 }
 
-.store-list-content {
-  height: calc(100% - 180px);
-  padding: 18px 14px 100px;
-  overflow-y: auto;
-}
+
 
 .store-list-title-row {
   display: flex;
@@ -20,23 +17,14 @@
   margin-bottom: 34px;
 }
 
-.store-list-title-row h1 {
-  margin: 0;
-  
-  color: #000;
- 
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 16px; 
-}
 
-  .my-store-list-page {
+.store-list-page {
   position: absolute;
 
   top: 107px;
   left: 0;
   right: 0;
-  bottom: 73px;
+  bottom: 85px;
  
 
   width: 100%;
@@ -50,9 +38,9 @@
 
 
 .store-list-title {
-  margin: 0 0 34px;
+  margin: 0 19px 34px;
 
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   line-height: 16px;
 
