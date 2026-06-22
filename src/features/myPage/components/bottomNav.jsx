@@ -23,7 +23,7 @@ function BottomNav() {
         <img src={qrIcon} alt="QR 아이콘" className="qr-icon" />
       </button>
 
-      <button className="nav-item" onClick={() => navigate(ROUTES.MYPAGE)}>
+      <button className="nav-item nav-item-active" onClick={() => navigate(ROUTES.MYPAGE)}>
         <img src={mypageIcon} alt="마이페이지 아이콘" className="nav-icon" />
 
         <span className="nav-text">나의 제휴</span>
