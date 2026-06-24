@@ -1,10 +1,12 @@
 import "./restaurantPopup.css";
-import { useNavigate } from "react-router-dom";
-import cancelButton from "../../../assets/cancelButton.svg";
-import { ROUTES } from "../../../router/routes.constant";
 
+import { useNavigate } from "react-router-dom";
+
+import cancelButton from "../../../assets/cancelButton.svg";
 import popupCh from "../../../assets/popupCh.svg";
 import jangsuImage from "../../../assets/jangsuImage.svg";
+
+import { ROUTES } from "../../../router/routes.constant";
 
 function RestaurantPopup({ restaurant, onClose }) {
   const navigate = useNavigate();
@@ -28,9 +30,7 @@ function RestaurantPopup({ restaurant, onClose }) {
         <img src={popupCh} alt="제휴 캐릭터" className="popup-character" />
 
         <p className="popup-benefit-text">
-          오후 4시 이후 메뉴 10% 할인
-          <br />
-          &#40;김밥 단일메뉴 제외&#41;
+          {restaurant.description || "제휴 정보가 없습니다."}
         </p>
       </div>
 
@@ -40,20 +40,21 @@ function RestaurantPopup({ restaurant, onClose }) {
 
       <div className="popup-menu-list">
         <img
-          src={jangsuImage}
-          alt="장수국수 대표메뉴"
+          src={restaurant.thumbnailUrl || jangsuImage}
+          alt="대표메뉴"
           className="popup-menu-image"
         />
+
         <img
-          src={jangsuImage}
-          alt="장수국수 대표메뉴"
+          src={restaurant.thumbnailUrl || jangsuImage}
+          alt="대표메뉴"
           className="popup-menu-image"
         />
       </div>
 
       <button
         className="popup-detail-button"
-        onClick={() => navigate(ROUTES.RESTAURANT_DETAIL(restaurant.id))}
+        onClick={() => navigate(ROUTES.RESTAURANT_DETAIL(restaurant.storeId))}
       >
         자세한 정보 보기
       </button>

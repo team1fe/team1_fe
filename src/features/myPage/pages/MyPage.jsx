@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import MainHeader from "../components/mainHeader";
@@ -9,11 +10,38 @@ import departmentIcon from "../../../assets/department.svg";
 import favoriteIcon from "../../../assets/favoriteCharacter.svg";
 
 import { ROUTES } from "../../../router/routes.constant";
+import { getMyPage } from "../../../api/myPageApi";
 
 import styles from "./MyPage.module.css";
 
 function MyPage() {
   const navigate = useNavigate();
+
+  const [myPageData, setMyPageData] = useState({
+    name: "김사자",
+    college: {
+      name: "광운대학교",
+    },
+    department: {
+      name: "미디어커뮤니케이션학부",
+    },
+    benefitUsageCount: 12,
+  });
+
+  useEffect(() => {
+    const fetchMyPage = async () => {
+      try {
+        const data = await getMyPage();
+
+        console.log("마이페이지 응답:", data);
+        setMyPageData(data);
+      } catch (error) {
+        console.error("마이페이지 조회 실패:", error);
+      }
+    };
+
+    fetchMyPage();
+  }, []);
 
   return (
     <div className={styles.screen}>
@@ -22,18 +50,18 @@ function MyPage() {
       <main className={styles.content}>
         <section className={styles.profileSection}>
           <h1>
-            안녕하세요, <span>김사자님</span>
+            안녕하세요, <span>{myPageData.name}님</span>
           </h1>
 
           <p>
-            광운대학교
+            {myPageData.college?.name || "광운대학교"}
             <br />
-            인문사회과학대학
-            <br />
-            미디어커뮤니케이션학부 소속
+            {myPageData.department?.name || "소속 정보 없음"}
           </p>
 
-          <small>지금까지 12번 혜택을 받았어요!</small>
+          <small>
+            지금까지 {myPageData.benefitUsageCount ?? 0}번 혜택을 받았어요!
+          </small>
         </section>
 
         <section className={styles.partnershipSection}>
@@ -65,6 +93,5 @@ function MyPage() {
     </div>
   );
 }
-
 
 export default MyPage;

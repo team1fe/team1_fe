@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import error from "../../../../assets/error.svg";
 import { ROUTES } from "../../../../router/routes.constant";
+import { login } from "../../../../api/authApi";
 
 import "./login.css";
 
@@ -13,12 +14,30 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleLogin = () => {
-    if (email === "test@kw.ac.kr" && password === "1234") {
+  const handleLogin = async () => {
+    try {
+      setIsError(false);
+      setIsLoading(true);
+
+      const data = await login({
+        email,
+        password,
+      });
+
+      localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("refreshToken", data.refreshToken);
+      localStorage.setItem("user", JSON.stringify(data.user));
+
+      console.log("로그인 성공:", data);
+
       navigate(ROUTES.HOME);
-    } else {
+    } catch (loginError) {
+      console.error("로그인 실패:", loginError);
       setIsError(true);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -66,16 +85,21 @@ function Login() {
       </div>
 
       {isError && (
-        <p className="login-error-text">비밀번호를 확인해주세요.</p>
+        <p className="login-error-text">이메일 또는 비밀번호를 확인해주세요.</p>
       )}
 
-      <button className="login-button" onClick={handleLogin}>
-        로그인
+      <button
+        className="login-button"
+        onClick={handleLogin}
+        disabled={isLoading}
+      >
+        {isLoading ? "로그인 중..." : "로그인"}
       </button>
 
       <button
         className="signup-button"
         onClick={() => navigate(ROUTES.SIGNUP_EMAIL)}
+        disabled={isLoading}
       >
         회원가입
       </button>

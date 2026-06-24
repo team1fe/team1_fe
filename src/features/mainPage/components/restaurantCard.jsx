@@ -1,9 +1,9 @@
 import "./restaurantCard.css";
 
-function RestaurantCard({ name, category, address, onClick }) {
+function RestaurantCard({ name, category, address, imageUrl, onClick }) {
   return (
     <button className="restaurant-card" onClick={onClick}>
-      <div className="restaurant-image"></div>
+      <img className="restaurant-image" src={imageUrl} alt={name} />
 
       <div className="restaurant-info">
         <div className="top-row">

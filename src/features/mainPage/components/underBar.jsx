@@ -1,44 +1,49 @@
 import "./underBar.css";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { getStores } from "../../../api/storeApi";
 
 import RestaurantCard from "./restaurantCard";
-
 import noResult from "../../../assets/noResult.svg";
-
-const restaurants = [
-  {
-    id: 1,
-    name: "장수국수",
-    category: "국수",
-    address: "서울 노원구 광운로 27 2층",
-  },
-  {
-    id: 2,
-    name: "광운분식",
-    category: "분식",
-    address: "서울 노원구 광운로 20",
-  },
-];
+import jangsuImage from "../../../assets/jangsuImage.svg";
 
 function UnderBar({ expanded, setExpanded, onSelectRestaurant }) {
   const [showFilter, setShowFilter] = useState(false);
-
   const [selectedFilter, setSelectedFilter] = useState("필터");
-
   const [searchText, setSearchText] = useState("");
 
-  const startY = useRef(0);
+  const [restaurants, setRestaurants] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
+  const startY = useRef(0);
   const isDragging = useRef(false);
 
-  const filteredRestaurants = restaurants.filter((restaurant) =>
-    restaurant.name.includes(searchText),
-  );
+  useEffect(() => {
+    const fetchStores = async () => {
+      try {
+        setIsLoading(true);
+
+        const data = await getStores({
+          keyword: searchText,
+          page: 0,
+          size: 20,
+        });
+
+        console.log("매장 목록 응답:", data);
+        setRestaurants(data?.content || []);
+      } catch (error) {
+        console.error("매장 목록 조회 실패:", error);
+        setRestaurants([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchStores();
+  }, [searchText]);
 
   const startDrag = (clientY) => {
     startY.current = clientY;
-
     isDragging.current = true;
   };
 
@@ -61,7 +66,6 @@ function UnderBar({ expanded, setExpanded, onSelectRestaurant }) {
 
     const handleMouseUp = (event) => {
       endDrag(event.clientY);
-
       window.removeEventListener("mouseup", handleMouseUp);
     };
 
@@ -103,7 +107,6 @@ function UnderBar({ expanded, setExpanded, onSelectRestaurant }) {
               }`}
               onClick={(e) => {
                 e.stopPropagation();
-
                 setShowFilter(!showFilter);
               }}
             >
@@ -116,7 +119,6 @@ function UnderBar({ expanded, setExpanded, onSelectRestaurant }) {
                   className="filter-option"
                   onClick={() => {
                     setSelectedFilter("단과대");
-
                     setShowFilter(false);
                   }}
                 >
@@ -129,7 +131,6 @@ function UnderBar({ expanded, setExpanded, onSelectRestaurant }) {
                   className="filter-option"
                   onClick={() => {
                     setSelectedFilter("학과(부)");
-
                     setShowFilter(false);
                   }}
                 >
@@ -144,13 +145,16 @@ function UnderBar({ expanded, setExpanded, onSelectRestaurant }) {
       <div className="list-divider"></div>
 
       <div className="restaurant-list">
-        {filteredRestaurants.length > 0 ? (
-          filteredRestaurants.map((restaurant) => (
+        {isLoading ? (
+          <p className="no-result-text">매장 목록을 불러오는 중이에요.</p>
+        ) : restaurants.length > 0 ? (
+          restaurants.map((restaurant) => (
             <RestaurantCard
-              key={restaurant.id}
+              key={restaurant.storeId}
               name={restaurant.name}
-              category={restaurant.category}
+              category={restaurant.description || "제휴 매장"}
               address={restaurant.address}
+              imageUrl={restaurant.thumbnailUrl || jangsuImage}
               onClick={() => onSelectRestaurant(restaurant)}
             />
           ))
@@ -163,12 +167,10 @@ function UnderBar({ expanded, setExpanded, onSelectRestaurant }) {
             />
 
             <p className="no-result-text">
-              <>
-                검색 결과가 없어요!
-                <br />
-                <br />
-                매장 이름을 확인해 주세요.
-              </>
+              검색 결과가 없어요!
+              <br />
+              <br />
+              백엔드에 매장 데이터가 아직 없을 수 있어요.
             </p>
           </div>
         )}
