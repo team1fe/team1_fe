@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import backIcon from "../../../assets/backIcon.svg";
 import { ROUTES } from "../../../router/routes.constant";
 
-import "./BackButton.css";
+import "./backButton.css";
 
 function BackButton() {
   const navigate = useNavigate();
