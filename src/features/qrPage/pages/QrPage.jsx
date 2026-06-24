@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import MainHeader from "../../myPage/components/mainHeader";
 import BottomNav from "../components/qrBottomNav";
@@ -6,14 +6,43 @@ import BottomNav from "../components/qrBottomNav";
 import QrScanBox from "../components/qrScanBox";
 import QrStatusModal from "../components/qrStatusModal";
 
-
-import { ROUTES } from "../../../router/routes.constant";
-
 import styles from "./QrPage.module.css";
 
 function QrPage() {
+  const videoRef = useRef(null);
+  const streamRef = useRef(null);
+
   const [scanStatus, setScanStatus] = useState("idle");
 
+  useEffect(() => {
+    const startCamera = async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            facingMode: "environment",
+          },
+          audio: false,
+        });
+
+        streamRef.current = stream;
+
+        if (videoRef.current) {
+          videoRef.current.srcObject = stream;
+        }
+      } catch (error) {
+        console.error("카메라 실행 실패:", error);
+        alert("카메라 권한을 허용해 주세요.");
+      }
+    };
+
+    startCamera();
+
+    return () => {
+      if (streamRef.current) {
+        streamRef.current.getTracks().forEach((track) => track.stop());
+      }
+    };
+  }, []);
 
   const handleScanClick = () => {
     setScanStatus("scanning");
@@ -35,10 +64,17 @@ function QrPage() {
 
   return (
     <div className={styles.qrPage}>
-      <div
-        className={styles.qrFrame}
-        //style={{ backgroundImage: `url(${qrBackground})` }}
-      >
+      <div className={styles.qrFrame}>
+        <video
+          ref={videoRef}
+          className={styles.cameraVideo}
+          autoPlay
+          playsInline
+          muted
+        />
+
+        <div className={styles.cameraDim}></div>
+
         <MainHeader />
 
         <main className={styles.qrMain}>
