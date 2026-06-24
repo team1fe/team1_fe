@@ -15,7 +15,7 @@ import College from "../features/myPage/pages/College";
 import Department from "../features/myPage/pages/Department";
 import Favorite from "../features/myPage/pages/Favorite";
 
-import QRPage from "../features/qrPage/pages/QRPage";
+import QrPage from "../features/qrPage/pages/QrPage";
 
 import { ROUTES } from "./routes.constant";
 
@@ -41,7 +41,7 @@ function AppRouter() {
       <Route path={ROUTES.COLLEGE} element={<College />} />
       <Route path={ROUTES.DEPARTMENT} element={<Department />} />
       <Route path={ROUTES.FAVORITE} element={<Favorite />} />
-      <Route path={ROUTES.QR} element={<QRPage />} />
+      <Route path={ROUTES.QR} element={<QrPage />} />
     </Routes>
   );
 }
